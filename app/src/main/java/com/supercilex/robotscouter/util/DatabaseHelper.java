@@ -34,20 +34,21 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.supercilex.robotscouter.data.client.UploadTeamMediaJobKt.startUploadTeamMediaJob;
-import static com.supercilex.robotscouter.data.util.ScoutUtilsKt.getMETRIC_PARSER;
-import static com.supercilex.robotscouter.data.util.ScoutUtilsKt.getScoutIndicesRef;
-import static com.supercilex.robotscouter.data.util.UserHelperKt.getTemplateIndicesRef;
 import static com.supercilex.robotscouter.util.AnalyticsUtilsKt.updateAnalyticsUserId;
 import static com.supercilex.robotscouter.util.ConnectivityUtilsKt.isOffline;
-import static com.supercilex.robotscouter.util.Constants.sFirebaseScoutTemplates;
 import static com.supercilex.robotscouter.util.Constants.sFirebaseTeams;
+import static com.supercilex.robotscouter.util.Constants.sFirebaseTemplates;
 import static com.supercilex.robotscouter.util.ConstantsKt.FIREBASE_METRICS;
 import static com.supercilex.robotscouter.util.ConstantsKt.FIREBASE_NAME;
 import static com.supercilex.robotscouter.util.ConstantsKt.getFIREBASE_DEFAULT_TEMPLATE;
-import static com.supercilex.robotscouter.util.ConstantsKt.getFIREBASE_SCOUT_TEMPLATES;
 import static com.supercilex.robotscouter.util.ConstantsKt.getFIREBASE_TEAMS;
+import static com.supercilex.robotscouter.util.ConstantsKt.getFIREBASE_TEMPLATES;
+import static com.supercilex.robotscouter.util.ScoutUtilsKt.getMETRIC_PARSER;
+import static com.supercilex.robotscouter.util.ScoutUtilsKt.getScoutIndicesRef;
+import static com.supercilex.robotscouter.util.TemplateUtilsKt.getTemplateIndicesRef;
 
-public enum DatabaseHelper {;
+public enum DatabaseHelper {
+    ;
     private static final String QUERY_KEY = "query_key";
 
     private static final SnapshotParser<Team> TEAM_PARSER = snapshot -> {
@@ -119,7 +120,7 @@ public enum DatabaseHelper {;
 
     public static void init(Context appContext) {
         sFirebaseTeams = TEAM_NOOP_ARRAY;
-        sFirebaseScoutTemplates = SCOUT_TEMPLATES_NOOP_ARRAY;
+        sFirebaseTemplates = SCOUT_TEMPLATES_NOOP_ARRAY;
 
         FirebaseAuth.getInstance().addAuthStateListener(auth -> {
             FirebaseUser user = auth.getCurrentUser();
@@ -185,19 +186,19 @@ public enum DatabaseHelper {;
     }
 
     private static void setScoutTemplatesListener() {
-        sFirebaseScoutTemplates.removeAllListeners();
-        sFirebaseScoutTemplates = new FirebaseIndexArray<>(
+        sFirebaseTemplates.removeAllListeners();
+        sFirebaseTemplates = new FirebaseIndexArray<>(
                 getTemplateIndicesRef(),
-                getFIREBASE_SCOUT_TEMPLATES(),
+                getFIREBASE_TEMPLATES(),
                 SCOUT_PARSER);
 
-        sFirebaseScoutTemplates.addChangeEventListener(new ChangeEventListenerBase());
+        sFirebaseTemplates.addChangeEventListener(new ChangeEventListenerBase());
     }
 
     private static void removeScoutTemplatesListener() {
-        if (sFirebaseScoutTemplates != SCOUT_TEMPLATES_NOOP_ARRAY) {
-            sFirebaseScoutTemplates.removeAllListeners();
-            sFirebaseScoutTemplates = SCOUT_TEMPLATES_NOOP_ARRAY;
+        if (sFirebaseTemplates != SCOUT_TEMPLATES_NOOP_ARRAY) {
+            sFirebaseTemplates.removeAllListeners();
+            sFirebaseTemplates = SCOUT_TEMPLATES_NOOP_ARRAY;
         }
     }
 

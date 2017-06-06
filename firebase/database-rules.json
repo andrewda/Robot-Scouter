@@ -10,7 +10,7 @@
         ".write": "auth != null && root.child('team-indices').child(auth.uid).child($key).exists()"
       }
     },
-    "scout-templates": {
+    "templates": {
       ".write": "auth != null"
     },
     "scouts": {

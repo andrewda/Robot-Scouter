@@ -7,9 +7,10 @@ import android.view.View
 import android.widget.TextView
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.data.model.Metric
+import com.supercilex.robotscouter.ui.MetricViewHolderBase
 
 open class EditTextViewHolder(itemView: View) :
-        ScoutViewHolderBase<Metric.Text, String?, TextView>(itemView),
+        MetricViewHolderBase<Metric.Text, String?, TextView>(itemView),
         View.OnFocusChangeListener {
     private val textLayout: TextInputLayout = itemView.findViewById(R.id.text_layout)
 

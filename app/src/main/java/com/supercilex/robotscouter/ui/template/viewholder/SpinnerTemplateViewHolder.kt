@@ -1,12 +1,12 @@
-package com.supercilex.robotscouter.ui.scout.viewholder.template
+package com.supercilex.robotscouter.ui.template.viewholder
 
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.data.model.Metric
-import com.supercilex.robotscouter.ui.scout.template.SpinnerTemplateDialog
 import com.supercilex.robotscouter.ui.scout.viewholder.SpinnerViewHolder
+import com.supercilex.robotscouter.ui.template.SpinnerTemplateDialog
 import com.supercilex.robotscouter.util.FIREBASE_VALUE
 import java.util.ArrayList
 import java.util.LinkedHashMap

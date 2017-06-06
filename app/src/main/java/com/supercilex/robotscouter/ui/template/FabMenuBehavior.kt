@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.template
+package com.supercilex.robotscouter.ui.template
 
 import android.content.Context
 import android.support.annotation.Keep

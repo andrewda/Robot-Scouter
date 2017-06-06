@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.viewholder
+package com.supercilex.robotscouter.ui
 
 import android.support.annotation.CallSuper
 import android.support.v4.app.FragmentManager
@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.data.model.Metric
 
-abstract class ScoutViewHolderBase<FMetric : Metric<TMetric>, TMetric, out VView : TextView>(
+abstract class MetricViewHolderBase<FMetric : Metric<TMetric>, TMetric, out VView : TextView>(
         itemView: View) :
         RecyclerView.ViewHolder(itemView) {
     @Suppress("UNCHECKED_CAST")

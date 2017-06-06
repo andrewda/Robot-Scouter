@@ -45,9 +45,9 @@ const val FIREBASE_SELECTED_VALUE_KEY = "selectedValueKey"
 
 // Scout template
 val FIREBASE_DEFAULT_TEMPLATE: DatabaseReference = DatabaseHelper.getRef().child("default-template")
-val FIREBASE_SCOUT_TEMPLATES: DatabaseReference = DatabaseHelper.getRef().child("scout-templates")
+val FIREBASE_TEMPLATES: DatabaseReference = DatabaseHelper.getRef().child("templates")
+const val SCOUT_TEMPLATE_INDICES = "templateIndices"
 const val FIREBASE_TEMPLATE_KEY = "templateKey"
-const val SCOUT_TEMPLATE_INDICES = "scoutTemplateIndices"
 // [END FIREBASE CHILD NAMES]
 
 var providerAuthority: String by Delegates.notNull()

@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.template
+package com.supercilex.robotscouter.ui.template
 
 import android.app.Dialog
 import android.os.Bundle
@@ -11,12 +11,12 @@ import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.RobotScouter
 import com.supercilex.robotscouter.data.model.Team
 import com.supercilex.robotscouter.data.util.TeamHelper
-import com.supercilex.robotscouter.data.util.templateIndicesRef
 import com.supercilex.robotscouter.util.Constants
-import com.supercilex.robotscouter.util.FIREBASE_SCOUT_TEMPLATES
+import com.supercilex.robotscouter.util.FIREBASE_TEMPLATES
 import com.supercilex.robotscouter.util.FIREBASE_TEMPLATE_KEY
 import com.supercilex.robotscouter.util.create
 import com.supercilex.robotscouter.util.show
+import com.supercilex.robotscouter.util.templateIndicesRef
 
 class ResetTemplateDialog : DialogFragment(), View.OnClickListener {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog = AlertDialog.Builder(context)
@@ -48,7 +48,7 @@ class ResetTemplateDialog : DialogFragment(), View.OnClickListener {
                     .forEach { it.ref.removeValue() }
 
             templateIndicesRef.child(templateKey).removeValue()
-            FIREBASE_SCOUT_TEMPLATES.child(templateKey).removeValue()
+            FIREBASE_TEMPLATES.child(templateKey).removeValue()
         } else {
             team.helper.ref.child(FIREBASE_TEMPLATE_KEY).removeValue()
         }

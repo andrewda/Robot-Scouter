@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.template
+package com.supercilex.robotscouter.ui.template
 
 import android.app.Dialog
 import android.content.DialogInterface

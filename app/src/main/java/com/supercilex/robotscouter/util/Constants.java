@@ -9,5 +9,5 @@ public enum Constants {;
     public static ObservableSnapshotArray<Team> sFirebaseTeams;
 
     public static DataSnapshot sDefaultTemplate;
-    public static ObservableSnapshotArray<Scout> sFirebaseScoutTemplates;
+    public static ObservableSnapshotArray<Scout> sFirebaseTemplates;
 }

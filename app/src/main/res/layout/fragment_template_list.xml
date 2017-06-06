@@ -6,49 +6,27 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".ui.scout.ScoutActivity">
+    tools:context=".ui.template.TemplateEditorActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/needed_for_CollapsingToolbarLayout_to_save_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         tools:ignore="UnusedIds">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
-            android:layout_height="256dp"
-            android:fitsSystemWindows="true"
+            android:layout_height="wrap_content"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:titleEnabled="false">
-
-            <ImageView
-                android:id="@+id/backdrop"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/accessibility_robot_icon"
-                android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax" />
-
-            <ProgressBar
-                android:id="@+id/progress"
-                style="@style/Base.Widget.AppCompat.ProgressBar"
-                android:layout_width="@dimen/fab_size"
-                android:layout_height="@dimen/fab_size"
-                android:layout_gravity="center"
-                android:indeterminate="true"
-                app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="104dp"
                 android:gravity="top"
-                app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:titleMarginTop="@dimen/spacing_large" />
 
@@ -68,9 +46,9 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.supercilex.robotscouter.util.SupportVectorDrawablesTextView
+        <TextView
             style="@style/RobotScouter.Tutorial.NoContentHint"
-            android:text="@string/no_scouts"
+            android:text="@string/no_templates"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

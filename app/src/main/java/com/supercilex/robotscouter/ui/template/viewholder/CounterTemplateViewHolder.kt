@@ -1,10 +1,9 @@
-package com.supercilex.robotscouter.ui.scout.viewholder.template
+package com.supercilex.robotscouter.ui.template.viewholder
 
 import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
-
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.ui.scout.viewholder.CounterViewHolder
 

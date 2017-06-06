@@ -8,9 +8,6 @@ import com.supercilex.robotscouter.util.FIREBASE_SELECTED_VALUE_KEY
 import com.supercilex.robotscouter.util.FIREBASE_UNIT
 import com.supercilex.robotscouter.util.FIREBASE_VALUE
 
-// TODO When ScoutListFragmentBase is converted to Kotlin, make is use the default constructor
-// params instead of defining its own
-
 sealed class Metric<T>(name: String, value: T) {
     class Boolean(name: String, value: kotlin.Boolean = false) :
             Metric<kotlin.Boolean>(name, value) {
@@ -44,7 +41,7 @@ sealed class Metric<T>(name: String, value: T) {
         override val type = TEXT
     }
 
-    class List(name: String, value: Map<String, String>, selectedValueKey: String? = null) :
+    class List(name: String, value: Map<String, String>, selectedValueKey: String?) :
             Metric<Map<String, String>>(name, value) {
         @Exclude @get:Keep
         override val type = LIST

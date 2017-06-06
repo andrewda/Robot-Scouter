@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static com.supercilex.robotscouter.data.client.DownloadTeamDataJobKt.startDownloadTeamDataJob;
-import static com.supercilex.robotscouter.data.util.ScoutUtilsKt.deleteAllScouts;
 import static com.supercilex.robotscouter.util.AuthUtilsKt.getUid;
 import static com.supercilex.robotscouter.util.ConstantsKt.FIREBASE_TEMPLATE_KEY;
 import static com.supercilex.robotscouter.util.ConstantsKt.FIREBASE_TIMESTAMP;
@@ -39,6 +38,7 @@ import static com.supercilex.robotscouter.util.ConstantsKt.getFIREBASE_TEAMS;
 import static com.supercilex.robotscouter.util.ConstantsKt.getFIREBASE_TEAM_INDICES;
 import static com.supercilex.robotscouter.util.CustomTabsUtilsKt.launchUrl;
 import static com.supercilex.robotscouter.util.RemoteConfigUtilsKt.fetchAndActivate;
+import static com.supercilex.robotscouter.util.ScoutUtilsKt.deleteAllScouts;
 
 public class TeamHelper implements Parcelable, Comparable<TeamHelper> {
     public static final Parcelable.Creator<TeamHelper> CREATOR = new Parcelable.Creator<TeamHelper>() {
@@ -142,8 +142,8 @@ public class TeamHelper implements Parcelable, Comparable<TeamHelper> {
         Long number = mTeam.getNumberAsLong();
         index.setValue(number, number);
 
-        if (!Constants.sFirebaseScoutTemplates.isEmpty()) {
-            mTeam.setTemplateKey(Constants.sFirebaseScoutTemplates.get(0).getKey());
+        if (!Constants.sFirebaseTemplates.isEmpty()) {
+            mTeam.setTemplateKey(Constants.sFirebaseTemplates.get(0).getKey());
         }
         forceUpdateTeam();
         forceRefresh();

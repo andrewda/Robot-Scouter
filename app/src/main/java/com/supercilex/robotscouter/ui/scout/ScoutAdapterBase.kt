@@ -8,22 +8,22 @@ import com.google.firebase.database.Query
 import com.supercilex.robotscouter.data.model.HEADER
 import com.supercilex.robotscouter.data.model.Metric
 import com.supercilex.robotscouter.data.model.MetricType
-import com.supercilex.robotscouter.data.util.METRIC_PARSER
 import com.supercilex.robotscouter.ui.CardListHelper
-import com.supercilex.robotscouter.ui.scout.viewholder.ScoutViewHolderBase
+import com.supercilex.robotscouter.ui.MetricViewHolderBase
+import com.supercilex.robotscouter.util.METRIC_PARSER
 
 abstract class ScoutAdapterBase(query: Query,
                                 private val manager: FragmentManager,
                                 private val recyclerView: RecyclerView) :
-        FirebaseRecyclerAdapter<Metric<*>, ScoutViewHolderBase<*, *, *>>(
+        FirebaseRecyclerAdapter<Metric<*>, MetricViewHolderBase<*, *, *>>(
                 METRIC_PARSER,
                 0,
-                ScoutViewHolderBase::class.java,
+                MetricViewHolderBase::class.java,
                 query) {
     protected abstract val cardListHelper: CardListHelper
     private val animator: SimpleItemAnimator = recyclerView.itemAnimator as SimpleItemAnimator
 
-    override fun populateViewHolder(viewHolder: ScoutViewHolderBase<*, *, *>,
+    override fun populateViewHolder(viewHolder: MetricViewHolderBase<*, *, *>,
                                     metric: Metric<*>,
                                     position: Int) {
         animator.supportsChangeAnimations = true
@@ -31,7 +31,7 @@ abstract class ScoutAdapterBase(query: Query,
         cardListHelper.onBind(viewHolder)
 
         @Suppress("UNCHECKED_CAST")
-        viewHolder as ScoutViewHolderBase<Metric<Any>, *, *>
+        viewHolder as MetricViewHolderBase<Metric<Any>, *, *>
         @Suppress("UNCHECKED_CAST")
         metric as Metric<Any>
         viewHolder.bind(metric, manager, animator)

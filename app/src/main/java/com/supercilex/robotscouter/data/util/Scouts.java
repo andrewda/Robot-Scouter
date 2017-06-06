@@ -30,12 +30,12 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-import static com.supercilex.robotscouter.data.util.ScoutUtilsKt.getMETRIC_PARSER;
-import static com.supercilex.robotscouter.data.util.ScoutUtilsKt.getScoutIndicesRef;
 import static com.supercilex.robotscouter.util.ConnectivityUtilsKt.isOffline;
 import static com.supercilex.robotscouter.util.ConstantsKt.FIREBASE_METRICS;
 import static com.supercilex.robotscouter.util.ConstantsKt.FIREBASE_NAME;
 import static com.supercilex.robotscouter.util.ConstantsKt.getFIREBASE_SCOUTS;
+import static com.supercilex.robotscouter.util.ScoutUtilsKt.getMETRIC_PARSER;
+import static com.supercilex.robotscouter.util.ScoutUtilsKt.getScoutIndicesRef;
 
 public final class Scouts implements OnFailureListener, OnSuccessListener<Pair<TeamHelper, List<String>>> {
     private final TaskCompletionSource<Map<TeamHelper, List<Scout>>> mScoutsTask = new TaskCompletionSource<>();

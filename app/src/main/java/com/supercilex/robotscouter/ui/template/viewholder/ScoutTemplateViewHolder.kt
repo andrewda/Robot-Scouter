@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.viewholder.template
+package com.supercilex.robotscouter.ui.template.viewholder
 
 import android.view.View
 

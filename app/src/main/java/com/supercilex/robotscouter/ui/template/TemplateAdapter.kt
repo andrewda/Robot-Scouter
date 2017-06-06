@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.template
+package com.supercilex.robotscouter.ui.template
 
 import android.support.v4.app.FragmentManager
 import android.support.v7.widget.RecyclerView
@@ -17,19 +17,19 @@ import com.supercilex.robotscouter.data.model.NUMBER
 import com.supercilex.robotscouter.data.model.STOPWATCH
 import com.supercilex.robotscouter.data.model.TEXT
 import com.supercilex.robotscouter.ui.CardListHelper
+import com.supercilex.robotscouter.ui.MetricViewHolderBase
 import com.supercilex.robotscouter.ui.scout.ScoutAdapterBase
-import com.supercilex.robotscouter.ui.scout.viewholder.ScoutViewHolderBase
-import com.supercilex.robotscouter.ui.scout.viewholder.template.CheckboxTemplateViewHolder
-import com.supercilex.robotscouter.ui.scout.viewholder.template.CounterTemplateViewHolder
-import com.supercilex.robotscouter.ui.scout.viewholder.template.EditTextTemplateViewHolder
-import com.supercilex.robotscouter.ui.scout.viewholder.template.HeaderTemplateViewHolder
-import com.supercilex.robotscouter.ui.scout.viewholder.template.SpinnerTemplateViewHolder
-import com.supercilex.robotscouter.ui.scout.viewholder.template.StopwatchTemplateViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.CheckboxTemplateViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.CounterTemplateViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.EditTextTemplateViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.HeaderTemplateViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.SpinnerTemplateViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.StopwatchTemplateViewHolder
 
-class ScoutTemplateAdapter(query: Query,
-                           manager: FragmentManager,
-                           recyclerView: RecyclerView,
-                           private val callback: ScoutTemplateItemTouchCallback) :
+class TemplateAdapter(query: Query,
+                      manager: FragmentManager,
+                      recyclerView: RecyclerView,
+                      private val callback: ScoutTemplateItemTouchCallback) :
         ScoutAdapterBase(query, manager, recyclerView) {
     override val cardListHelper: CardListHelper = ListHelper()
 
@@ -37,7 +37,7 @@ class ScoutTemplateAdapter(query: Query,
         callback.setCardListHelper(cardListHelper)
     }
 
-    override fun populateViewHolder(viewHolder: ScoutViewHolderBase<*, *, *>,
+    override fun populateViewHolder(viewHolder: MetricViewHolderBase<*, *, *>,
                                     metric: Metric<*>,
                                     position: Int) {
         super.populateViewHolder(viewHolder, metric, position)
@@ -45,7 +45,7 @@ class ScoutTemplateAdapter(query: Query,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, @MetricType viewType: Int):
-            ScoutViewHolderBase<*, *, *> {
+            MetricViewHolderBase<*, *, *> {
         val inflater: LayoutInflater = LayoutInflater.from(parent.context)
         when (viewType) {
             BOOLEAN -> return CheckboxTemplateViewHolder(

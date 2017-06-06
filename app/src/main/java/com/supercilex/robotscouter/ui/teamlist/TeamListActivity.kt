@@ -21,6 +21,7 @@ import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.data.util.TeamHelper
 import com.supercilex.robotscouter.ui.scout.ScoutActivity
 import com.supercilex.robotscouter.ui.scout.ScoutListFragmentBase.KEY_SCOUT_ARGS
+import com.supercilex.robotscouter.ui.template.TemplateEditorActivity
 import com.supercilex.robotscouter.util.fetchAndActivate
 import com.supercilex.robotscouter.util.isInTabletMode
 import com.supercilex.robotscouter.util.isOffline
@@ -85,6 +86,7 @@ class TeamListActivity : AppCompatActivity(), View.OnClickListener, TeamSelectio
         when (item.itemId) {
             R.id.action_sign_in -> authHelper.signIn()
             R.id.action_sign_out -> authHelper.signOut()
+            R.id.action_edit_templates -> TemplateEditorActivity.start(this)
             R.id.action_donate -> DonateDialog.show(supportFragmentManager)
             R.id.action_licenses -> LicensesDialog.show(supportFragmentManager)
             R.id.action_about -> AboutDialog.show(supportFragmentManager)
@@ -126,7 +128,7 @@ class TeamListActivity : AppCompatActivity(), View.OnClickListener, TeamSelectio
             teamListFragment.selectTeam(null)
             teamListFragment.selectTeam(team)
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.scouts, TabletScoutListFragment.newInstance(args))
+                    .replace(R.id.scout_list, TabletScoutListFragment.newInstance(args))
                     .commit()
         } else {
             if (restoreOnConfigChange) {

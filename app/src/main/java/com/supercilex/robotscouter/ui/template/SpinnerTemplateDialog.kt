@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.template
+package com.supercilex.robotscouter.ui.template
 
 import android.app.Dialog
 import android.os.Bundle
@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.RobotScouter
 import com.supercilex.robotscouter.ui.CardListHelper
-import com.supercilex.robotscouter.ui.scout.viewholder.template.SpinnerItemViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.SpinnerItemViewHolder
 import com.supercilex.robotscouter.util.DatabaseHelper
 import com.supercilex.robotscouter.util.FIREBASE_SELECTED_VALUE_KEY
 import com.supercilex.robotscouter.util.create

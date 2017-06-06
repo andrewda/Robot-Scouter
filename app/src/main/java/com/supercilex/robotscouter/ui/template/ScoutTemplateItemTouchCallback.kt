@@ -1,4 +1,4 @@
-package com.supercilex.robotscouter.ui.scout.template
+package com.supercilex.robotscouter.ui.template
 
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.RecyclerView
@@ -14,7 +14,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.ui.CardListHelper
-import com.supercilex.robotscouter.ui.scout.viewholder.template.ScoutTemplateViewHolder
+import com.supercilex.robotscouter.ui.template.viewholder.ScoutTemplateViewHolder
 
 class ScoutTemplateItemTouchCallback(private val rootView: View) :
         ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.LEFT) {

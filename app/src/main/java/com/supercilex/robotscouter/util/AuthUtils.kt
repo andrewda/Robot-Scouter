@@ -45,7 +45,7 @@ private class DatabaseInitializer : ValueEventListener, OnSuccessListener<Void> 
 
     override fun onSuccess(aVoid: Void?) {
         if (FirebaseRemoteConfig.getInstance().getBoolean(SHOULD_CACHE_DB)) {
-            FIREBASE_SCOUT_TEMPLATES.addListenerForSingleValueEvent(this)
+            FIREBASE_TEMPLATES.addListenerForSingleValueEvent(this)
         }
     }
 

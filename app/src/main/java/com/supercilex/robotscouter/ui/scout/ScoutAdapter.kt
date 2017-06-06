@@ -14,11 +14,11 @@ import com.supercilex.robotscouter.data.model.NUMBER
 import com.supercilex.robotscouter.data.model.STOPWATCH
 import com.supercilex.robotscouter.data.model.TEXT
 import com.supercilex.robotscouter.ui.CardListHelper
+import com.supercilex.robotscouter.ui.MetricViewHolderBase
 import com.supercilex.robotscouter.ui.scout.viewholder.CheckboxViewHolder
 import com.supercilex.robotscouter.ui.scout.viewholder.CounterViewHolder
 import com.supercilex.robotscouter.ui.scout.viewholder.EditTextViewHolder
 import com.supercilex.robotscouter.ui.scout.viewholder.HeaderViewHolder
-import com.supercilex.robotscouter.ui.scout.viewholder.ScoutViewHolderBase
 import com.supercilex.robotscouter.ui.scout.viewholder.SpinnerViewHolder
 import com.supercilex.robotscouter.ui.scout.viewholder.StopwatchViewHolder
 
@@ -27,7 +27,7 @@ class ScoutAdapter(query: Query, manager: FragmentManager, recyclerView: Recycle
     override val cardListHelper: CardListHelper = ListHelper(true)
 
     override fun onCreateViewHolder(parent: ViewGroup, @MetricType viewType: Int):
-            ScoutViewHolderBase<*, *, *> {
+            MetricViewHolderBase<*, *, *> {
         val inflater: LayoutInflater = LayoutInflater.from(parent.context)
         when (viewType) {
             BOOLEAN -> return CheckboxViewHolder(
