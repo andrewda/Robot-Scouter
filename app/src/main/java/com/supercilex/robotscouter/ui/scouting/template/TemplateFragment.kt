@@ -1,7 +1,6 @@
 package com.supercilex.robotscouter.ui.scouting.template
 
 import android.os.Bundle
-import android.support.annotation.DrawableRes
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
 import android.view.LayoutInflater
@@ -11,7 +10,6 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import com.github.clans.fab.FloatingActionButton
 import com.github.clans.fab.FloatingActionMenu
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.data.model.Metric
@@ -27,7 +25,7 @@ import java.util.Collections
 
 class TemplateFragment : TabFragmentBase(), View.OnClickListener, OnBackPressedListener {
     override val rootView: View by lazy {
-        View.inflate(context, R.layout.fragment_template, null)
+        View.inflate(context, R.layout.fragment_scouting, null)
     }
     override val adapter by lazy {
         TemplateAdapter(
@@ -38,27 +36,7 @@ class TemplateFragment : TabFragmentBase(), View.OnClickListener, OnBackPressedL
     }
     private val itemTouchCallback by lazy { TemplateItemTouchCallback(rootView) }
     private val fam: FloatingActionMenu by lazy {
-        fun initFab(fab: FloatingActionButton, @DrawableRes icon: Int) {
-            fab.setOnClickListener(this)
-            fab.setImageResource(icon)
-        }
-
-        initFab(rootView.findViewById(R.id.add_header), R.drawable.ic_title_white_24dp)
-        initFab(rootView.findViewById(R.id.add_checkbox), R.drawable.ic_done_white_24dp)
-        initFab(rootView.findViewById(R.id.add_stopwatch), R.drawable.ic_timer_white_24dp)
-        initFab(rootView.findViewById(R.id.add_note), R.drawable.ic_note_white_24dp)
-        initFab(rootView.findViewById(R.id.add_counter), R.drawable.ic_count_white_24dp)
-        initFab(rootView.findViewById(R.id.add_spinner), R.drawable.ic_list_white_24dp)
-
-        // This lets us close the fam when the recyclerview it touched
-        recyclerView.addOnItemTouchListener(object : RecyclerView.SimpleOnItemTouchListener() {
-            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
-                fam.close(true)
-                return false
-            }
-        })
-
-        rootView.findViewById<FloatingActionMenu>(R.id.fab_menu)
+        parentFragment.view!!.findViewById<FloatingActionMenu>(R.id.fab_menu)
     }
 
     private var hasAddedItem: Boolean = false
@@ -72,7 +50,6 @@ class TemplateFragment : TabFragmentBase(), View.OnClickListener, OnBackPressedL
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        fam
 
         val itemTouchHelper = ItemTouchHelper(itemTouchCallback)
         itemTouchCallback.setItemTouchHelper(itemTouchHelper)
@@ -93,6 +70,13 @@ class TemplateFragment : TabFragmentBase(), View.OnClickListener, OnBackPressedL
                 }
 
                 hasAddedItem = false
+            }
+        })
+        // This lets us close the fam when the recyclerview it touched
+        recyclerView.addOnItemTouchListener(object : RecyclerView.SimpleOnItemTouchListener() {
+            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                fam.close(true)
+                return false
             }
         })
 

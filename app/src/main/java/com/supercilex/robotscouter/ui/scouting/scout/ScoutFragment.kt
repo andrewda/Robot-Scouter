@@ -9,7 +9,7 @@ import com.supercilex.robotscouter.util.getTabKeyBundle
 
 class ScoutFragment : TabFragmentBase() {
     override val rootView by lazy {
-        View.inflate(context, R.layout.fragment_scout, null) as RecyclerView
+        View.inflate(context, R.layout.fragment_scouting, null) as RecyclerView
     }
     override val adapter by lazy {
         ScoutAdapter(getScoutMetricsRef(key), childFragmentManager, recyclerView)

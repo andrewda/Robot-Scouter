@@ -9,35 +9,23 @@
     tools:context=".ui.scouting.template.TemplateEditorActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/needed_for_CollapsingToolbarLayout_to_save_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        tools:ignore="UnusedIds">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/header"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleMarginTop="@dimen/spacing_large" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:titleEnabled="false">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="104dp"
-                android:gravity="top"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:titleMarginTop="@dimen/spacing_large" />
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="bottom"
-                app:tabMode="scrollable" />
-
-        </android.support.design.widget.CollapsingToolbarLayout>
+            app:tabMode="scrollable" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -60,5 +48,50 @@
             android:layout_height="match_parent" />
 
     </android.support.constraint.ConstraintLayout>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|end"
+        android:padding="@dimen/spacing_large"
+        app:layout_behavior="com.supercilex.robotscouter.ui.scouting.template.FabMenuBehavior"
+        app:menu_backgroundColor="#dcf1f1f1"
+        app:menu_colorNormal="@color/colorAccent"
+        app:menu_colorPressed="@color/colorAccent"
+        app:menu_colorRipple="@color/colorAccent"
+        app:srcCompat="@drawable/ic_add_white_24dp">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/add_header"
+            style="@style/RobotScouter.Fab.Metric"
+            app:fab_label="@string/add_header" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/add_checkbox"
+            style="@style/RobotScouter.Fab.Metric"
+            app:fab_label="@string/add_checkbox" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/add_stopwatch"
+            style="@style/RobotScouter.Fab.Metric"
+            app:fab_label="@string/add_stopwatch" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/add_note"
+            style="@style/RobotScouter.Fab.Metric"
+            app:fab_label="@string/add_note" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/add_counter"
+            style="@style/RobotScouter.Fab.Metric"
+            app:fab_label="@string/add_counter" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/add_spinner"
+            style="@style/RobotScouter.Fab.Metric"
+            app:fab_label="@string/add_spinner" />
+
+    </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.design.widget.CoordinatorLayout>
