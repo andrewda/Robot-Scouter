@@ -19,9 +19,9 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.supercilex.robotscouter.BuildConfig
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.data.util.TeamHelper
-import com.supercilex.robotscouter.ui.scout.ScoutActivity
-import com.supercilex.robotscouter.ui.scout.ScoutListFragmentBase.KEY_SCOUT_ARGS
-import com.supercilex.robotscouter.ui.template.TemplateEditorActivity
+import com.supercilex.robotscouter.ui.scouting.scout.ScoutActivity
+import com.supercilex.robotscouter.ui.scouting.scout.ScoutListFragmentBase.KEY_SCOUT_ARGS
+import com.supercilex.robotscouter.ui.scouting.template.TemplateEditorActivity
 import com.supercilex.robotscouter.util.fetchAndActivate
 import com.supercilex.robotscouter.util.isInTabletMode
 import com.supercilex.robotscouter.util.isOffline

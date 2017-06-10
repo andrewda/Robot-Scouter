@@ -9,8 +9,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.supercilex.robotscouter.R;
 import com.supercilex.robotscouter.data.util.TeamHelper;
-import com.supercilex.robotscouter.ui.scout.AppBarViewHolderBase;
-import com.supercilex.robotscouter.ui.scout.ScoutListFragmentBase;
+import com.supercilex.robotscouter.ui.scouting.scout.AppBarViewHolderBase;
+import com.supercilex.robotscouter.ui.scouting.scout.ScoutListFragmentBase;
 
 import static com.supercilex.robotscouter.util.ViewUtilsKt.isInTabletMode;
 

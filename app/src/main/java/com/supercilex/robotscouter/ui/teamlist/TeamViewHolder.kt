@@ -21,7 +21,7 @@ import com.bumptech.glide.request.target.Target
 import com.supercilex.robotscouter.R
 import com.supercilex.robotscouter.data.model.Team
 import com.supercilex.robotscouter.ui.TeamDetailsDialog
-import com.supercilex.robotscouter.ui.scout.ScoutListFragmentBase
+import com.supercilex.robotscouter.ui.scouting.scout.ScoutListFragmentBase
 import com.supercilex.robotscouter.util.animateCircularReveal
 
 private val RecyclerView.isScrolling get() = scrollState != RecyclerView.SCROLL_STATE_IDLE

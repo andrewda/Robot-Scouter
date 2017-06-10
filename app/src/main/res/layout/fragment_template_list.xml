@@ -6,7 +6,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.template.TemplateEditorActivity">
+    tools:context=".ui.scouting.template.TemplateEditorActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/needed_for_CollapsingToolbarLayout_to_save_state"

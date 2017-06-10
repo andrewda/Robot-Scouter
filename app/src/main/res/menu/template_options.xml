@@ -2,7 +2,7 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.template.TemplateEditorActivity">
+    tools:context=".ui.scouting.template.TemplateEditorActivity">
 
     <item
         android:id="@+id/action_reset_template_all"
